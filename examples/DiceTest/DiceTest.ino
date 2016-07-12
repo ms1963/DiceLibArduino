@@ -1,4 +1,5 @@
-#define DEBUG
+// defining DEBUG enables debug output on Serial port
+#define DEBUG 
 #include "Dice.h"
 
 // Dice with LEDs on digital Pins 9, 10, 11
