@@ -3,23 +3,23 @@
 
 
 Dice::Dice(int led4, int led2, int led1) {
-  _led4 = led4;
-  _led2 = led2;
-  _led1 = led1;
-  pinMode(_led4, OUTPUT);
+  _led4 = led4; // LED that represents MSBit
+  _led2 = led2; // LED that represents medium Bit
+  _led1 = led1; // LED that represents LSBit
+  pinMode(_led4, OUTPUT); // all pins are OUTPUT pins
   pinMode(_led2, OUTPUT);
   pinMode(_led1, OUTPUT);
-  randomSeed(analogRead(A0));
+  randomSeed(analogRead(A0)); // read random value from analog A0 for initial seed
 }
 
 void Dice::roll() {
-   int result = random(1,7);
+   int result = random(1,7); // get a random number from 1..6
 #ifdef DEBUG
    Serial.print(“result = “);
    Serial.println(result);
 #endif
 
-   controlLED(_led4, (1 == result / 4 ));
+   controlLED(_led4, (1 == result / 4 )); // simple arithmetic
 
 #ifdef DEBUG
    Serial.print(“led4 = “); 
