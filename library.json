@@ -1,0 +1,27 @@
+{
+"name": "DiceLibrary",
+"frameworks": "Arduino",
+"keywords": "dice, LED",
+"description": "Implement a binary dice",
+"authors":
+[
+    {
+        "name": "Michael.Stal",
+        "email": "michael@stal.de",
+        "url": "http://www.stal.de",
+        "maintainer": true
+    },
+    {
+        "name": "Hans Hase"
+    },
+    {
+        "name": "Dick Duck",
+        "email": "duck@entenhausen.de"
+    }
+],
+"repository":
+{
+    "type": "git",
+    "url": "https://github.com/tbd/DiceLibrary"
+}
+}
