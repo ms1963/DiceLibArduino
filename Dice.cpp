@@ -1,7 +1,7 @@
 #include <Dice.h>
 #include <Arduino.h>
 
-
+#define DEBUG
 Dice::Dice(int led4, int led2, int led1) {
   _led4 = led4; // LED that represents MSBit
   _led2 = led2; // LED that represents medium Bit
@@ -14,15 +14,16 @@ Dice::Dice(int led4, int led2, int led1) {
 
 void Dice::roll() {
    int result = random(1,7); // get a random number from 1..6
+
 #ifdef DEBUG
-   Serial.print(“result = “);
+   Serial.print("dice value = ");
    Serial.println(result);
 #endif
 
    controlLED(_led4, (1 == result / 4 )); // simple arithmetic
 
 #ifdef DEBUG
-   Serial.print(“led4 = “); 
+   Serial.print("LED4 = ");
    Serial.println(1 == result / 4);
 #endif
 
@@ -30,7 +31,7 @@ void Dice::roll() {
    controlLED(_led2, (1 == result /  2));
 
 #ifdef DEBUG
-   Serial.print(“led2 = “); 
+   Serial.print("LED2 = ");
    Serial.println(1 == result / 2);
 #endif
 
@@ -38,7 +39,7 @@ void Dice::roll() {
    controlLED(_led1, 1 ==  result);
 
 #ifdef DEBUG
-   Serial.print(“led1 = “); 
+   Serial.print("LED1 = ");
    Serial.println(1 == result);
 #endif
 }
