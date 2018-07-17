@@ -1,2 +1,2 @@
-Dice KEYWORD1
-roll KEYWORD2
+Dice	KEYWORD1
+roll	KEYWORD2
